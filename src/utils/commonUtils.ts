@@ -1,6 +1,6 @@
 import Home from "../PortfolioContainer/Home/Home";
 
-export const TOTAL_SCREENS = [{ screen_name: "Home", component: Home }];
+export const TOTAL_SCREENS = [{ screen_name: "Home", component: Home, alreadyRendered: true }]; // alreadyRendered von mir hinzugefügt
 
 export const GET_SCREEN_INDEX = (screen_name: any) => {
   if (!screen_name) return -1;

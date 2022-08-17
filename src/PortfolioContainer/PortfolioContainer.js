@@ -1,4 +1,3 @@
-import React from "react";
 import { TOTAL_SCREENS } from "../utils/commonUtils";
 
 export default function PortfolioContainer() {
