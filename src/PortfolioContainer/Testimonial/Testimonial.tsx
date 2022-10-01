@@ -5,6 +5,7 @@ import "owl.carousel/dist/assets/owl.theme.default.css";
 import ScreenHeading from "../../utils/ScreenHeading/ScreenHeading";
 import ScrollService from "../../utils/ScrollService";
 import Animations from "../../utils/Animations";
+import "./Testimonial.css";
 
 interface Props {
   id: any;
@@ -15,6 +16,28 @@ export default function Testimonial({ id }: Props) {
     if (screen.fadeScreen !== id) return;
     Animations.animations.fadeInScreen(id);
   };
+
+  const options = {
+    loop: true,
+    margin: 0,
+    nav: true,
+    animateIn: "bounceInRight",
+    animateOut: "bounceOutRight",
+    dots: true,
+    autoplay: true,
+    smartSpeed: 1000,
+    responsive: {
+      0: {
+        items: 1,
+      },
+      768: {
+        items: 1,
+      },
+      1000: {
+        items: 3,
+      },
+    },
+  };
   const fadeInSubscription = ScrollService.currentScreenFadeIn.subscribe(fadeInScreenHandler);
 
   return (
@@ -23,7 +46,7 @@ export default function Testimonial({ id }: Props) {
       <section className="testimonial-section" id={id}>
         <div className="container">
           <div className="row">
-            <OwlCarousel className="owl-carousel" id="testimonial-carousel">
+            <OwlCarousel className="owl-carousel" id="testimonial-carousel" {...options}>
               <div className="col-lg-12">
                 <div className="testi-item">
                   <div className="testi-comment">
@@ -117,7 +140,7 @@ export default function Testimonial({ id }: Props) {
                     </ul>
                   </div>
                   <div className="client-info">
-                    <img src="img/testimonial/lady.png" alt="no internet con" />
+                    <img src="img/testimonial/mike.png" alt="no internet con" />
                     <h5>Daisy Dominic</h5>
                     <p>CEO InansGlobal</p>
                   </div>
