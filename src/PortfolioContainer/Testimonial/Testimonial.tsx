@@ -107,7 +107,7 @@ export default function Testimonial({ id }: Props) {
                     </ul>
                   </div>
                   <div className="client-info">
-                    <img src="img/testimonial/lady.png" alt="no internet con" />
+                    <img src="img/testimonial/daisy.jpg" alt="no internet con" />
                     <h5>Daisy Dominic</h5>
                     <p>CEO InansGlobal</p>
                   </div>
@@ -141,7 +141,7 @@ export default function Testimonial({ id }: Props) {
                   </div>
                   <div className="client-info">
                     <img src="img/testimonial/mike.png" alt="no internet con" />
-                    <h5>Daisy Dominic</h5>
+                    <h5>Mike Dominic</h5>
                     <p>CEO InansGlobal</p>
                   </div>
                 </div>
@@ -173,8 +173,8 @@ export default function Testimonial({ id }: Props) {
                     </ul>
                   </div>
                   <div className="client-info">
-                    <img src="img/testimonial/lady.png" alt="no internet con" />
-                    <h5>Daisy Dominic</h5>
+                    <img src="img/testimonial/ehiz.jpg" alt="no internet con" />
+                    <h5>Ehiz Dominic</h5>
                     <p>CEO InansGlobal</p>
                   </div>
                 </div>
