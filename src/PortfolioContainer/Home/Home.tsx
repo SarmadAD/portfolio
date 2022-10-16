@@ -3,9 +3,13 @@ import Profile from "../Home/Profile/Profile";
 import "./Home.css";
 import Header from "./Header/Header";
 
-export default function Home() {
+interface Props {
+  id: any;
+}
+
+export default function Home({ id }: Props) {
   return (
-    <div className="home-container">
+    <div className="home-container" id={id || ""}>
       <Header />
       <Profile />
       <Footer />

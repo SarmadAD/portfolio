@@ -13,7 +13,7 @@ interface Props {
 
 export default function Testimonial({ id }: Props) {
   let fadeInScreenHandler = (screen: any) => {
-    if (screen.fadeScreen !== id) return;
+    if (screen.fadeInScreen !== id) return;
     Animations.animations.fadeInScreen(id);
   };
 
@@ -43,7 +43,7 @@ export default function Testimonial({ id }: Props) {
   return (
     <div>
       <ScreenHeading title="Testimonial" subHeading="What My Client Sy About Me" />
-      <section className="testimonial-section" id={id}>
+      <section className="testimonial-section fade-in" id={id}>
         <div className="container">
           <div className="row">
             <OwlCarousel className="owl-carousel" id="testimonial-carousel" {...options}>

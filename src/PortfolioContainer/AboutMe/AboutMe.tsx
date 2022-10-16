@@ -9,7 +9,7 @@ interface Props {
 
 export default function AboutMe({ id }: Props) {
   let fadeInScreenHandler = (screen: any) => {
-    if (screen.fadeScreen !== id) return;
+    if (screen.fadeInScreen !== id) return;
     Animations.animations.fadeInScreen(id);
   };
   const fadeInSubscription = ScrollService.currentScreenFadeIn.subscribe(fadeInScreenHandler);
@@ -30,7 +30,7 @@ export default function AboutMe({ id }: Props) {
     ));
   };
   return (
-    <div className="about-me-container screen-container" id={id || ""}>
+    <div className="about-me-container screen-container fade-in" id={id || ""}>
       <div className="about-me-parent">
         <ScreenHeading title="About Me" subHeading="Why Choose Me?" />
         <div className="about-me-card">
@@ -44,7 +44,9 @@ export default function AboutMe({ id }: Props) {
               {renderHighlights()}
             </div>
             <div className="about-me-options">
-              <button className="btn primary-btn">Hire Me</button>
+              <button className="btn primary-btn" onClick={() => ScrollService.scrollHandler.scrollToHireMe()}>
+                Hire Me
+              </button>
               <a href="CV Sarmad Ahmad.pdf" download="CV Sarmad Ahmad">
                 <button className="btn highlighted-btn">Get Resume</button>
               </a>

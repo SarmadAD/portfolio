@@ -15,7 +15,7 @@ export default function Header() {
     if (screenIndex < 0) return;
   };
 
-  let currentScreenSubscription = ScrollService.currentScreenBroadCaster.subscribe(updateCurrentScreen);
+  let currentScreenSubscription = ScrollService.currentScreenBroadcaster.subscribe(updateCurrentScreen);
 
   const getHeaderOptions = () => {
     return TOTAL_SCREENS.map((screen, i) => (
@@ -26,9 +26,9 @@ export default function Header() {
   };
 
   const getHeaderOptionsClass = (index: number) => {
-    let classes = "header-option";
-    if (index < TOTAL_SCREENS.length - 1) classes += "header-option-seperator";
-    if (selectedScreen === index) classes += "selected-header-option";
+    let classes = "header-option ";
+    if (index < TOTAL_SCREENS.length - 1) classes += "header-option-seperator ";
+    if (selectedScreen === index) classes += "selected-header-option ";
     return classes;
   };
 

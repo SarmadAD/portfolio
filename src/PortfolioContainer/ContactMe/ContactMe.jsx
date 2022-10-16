@@ -1,15 +1,18 @@
 import React, { useState } from "react";
 import imgBack from "../../../src/images/mailz.jpeg";
-// import load1 from "../../../src/images/load2.gif";
+import load1 from "../../../src/images/load2.gif";
 import Animations from "../../utils/Animations";
 import ScreenHeading from "../../utils/ScreenHeading/ScreenHeading";
 import ScrollService from "../../utils/ScrollService";
 import Typical from "react-typical";
 import "./ContactMe.css";
+import axios from "axios";
+import { toast } from "react-toastify";
+import Footer from "../Footer/Footer";
 
-export default function ContactMe(id) {
+export default function ContactMe({ id }) {
   let fadeInScreenHandler = (screen) => {
-    if (screen.fadeScreen !== id) return;
+    if (screen.fadeInScreen !== id) return;
     Animations.animations.fadeInScreen(id);
   };
 
@@ -33,8 +36,32 @@ export default function ContactMe(id) {
     setMessage(event.target.value);
   };
 
+  async function submitForm(event) {
+    event.preventDefault();
+    try {
+      let data = {
+        name,
+        email,
+        message,
+      };
+      setBool(true);
+      const result = await axios.post(`/contact`, data);
+      if (name.length === 0 || email.length === 0 || message.length === 0) {
+        setBanner(result.data.msg);
+        toast.error(result.data.msg);
+        setBool(false);
+      } else if (result.status === 200) {
+        setBanner(result.data.msg);
+        toast.success(result.data.msg);
+        setBool(false);
+      }
+    } catch (error) {
+      console.log(error);
+    }
+  }
+
   return (
-    <div className="main-container" id={id || ""}>
+    <div className="main-container fade-in" id={id || ""}>
       <ScreenHeading subHeading="Lets Keep In Touch" title="Contact Me" />
       <div className="central-form">
         <div className="col">
@@ -59,7 +86,7 @@ export default function ContactMe(id) {
             <h4>Send your Email Here!</h4>
             <img src={imgBack} alt="image not found" />
           </div>
-          <form>
+          <form onSubmit={submitForm}>
             <p>{banner}</p>
             <label htmlFor="name">Name</label>
             <input type="text" onChange={handleName} value={name} />
@@ -71,11 +98,19 @@ export default function ContactMe(id) {
               <button type="submit">
                 Send
                 <i className="fa fa-paper-plane" />
+                {bool ? (
+                  <b className="load">
+                    <img src={load1} alt="image not responding" />
+                  </b>
+                ) : (
+                  ""
+                )}
               </button>
             </div>
           </form>
         </div>
       </div>
+      <Footer />
     </div>
   );
 }
