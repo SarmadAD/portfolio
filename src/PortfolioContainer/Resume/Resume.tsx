@@ -38,7 +38,7 @@ export default function Resume({ id }: Props) {
   };
 
   const programmingSkillDetails = [
-    { skill: "JavaScript", ratingPercentage: 70 },
+    { skill: "JavaScript", ratingPercentage: 60 },
     { skill: "C#", ratingPercentage: 60 },
     { skill: "React", ratingPercentage: 80 },
     { skill: "CSS", ratingPercentage: 80 },
@@ -50,21 +50,21 @@ export default function Resume({ id }: Props) {
   const projectDetails = [
     {
       title: "Personal Portfolio Website",
-      duration: { fromDate: "2020", toDate: "2021" },
-      description: "Beschreibung hier",
-      subHeading: "Technologien hier rein und kleinere infos",
+      duration: { fromDate: "2022", toDate: "2022" },
+      description: "Eine Portfolio Website",
+      subHeading: "JavaScript, React, HTML CSS, TypeScript",
     },
     {
-      title: "Project 2",
-      duration: { fromDate: "2019", toDate: "2021" },
-      description: "Beschreibung hier",
-      subHeading: "Technologien hier rein und kleinere infos",
+      title: "Blog",
+      duration: { fromDate: "2021", toDate: "2022" },
+      description: "Eigene Blog Website mit Anmeldung und Benutzerverwaltung",
+      subHeading: "C#, HTML, CSS, Blazor, SQL, SQL-Server",
     },
     {
-      title: "Project 3",
-      duration: { fromDate: "2018", toDate: "2021" },
-      description: "Beschreibung hier",
-      subHeading: "Technologien hier rein und kleinere infos",
+      title: "Game of Life",
+      duration: { fromDate: "2019", toDate: "2020" },
+      description: "Das Game Of Life in einfacher Version programmiert",
+      subHeading: "C#, HTML, CSS, Blazor",
     },
   ];
 
@@ -81,16 +81,18 @@ export default function Resume({ id }: Props) {
         </div>
         <ResumeHeading heading="Ausbildung" subHeading="Fachinformatiker für die Anwendungsentwicklung" fromDate="2010" toDate="2014" />
         <div className="experience-description">
-          <span className="resume-description-text">Text rein vom LinkedIn</span>
+          <ul>
+            <li>
+              <span className="resume-description-text">Desktop Development with C#</span>
+            </li>
+            <li>
+              <span className="resume-description-text">Database Development with SQL-Server</span>
+            </li>
+            <li>
+              <span className="resume-description-text">Web Development with HTML, CSS and Blazor</span>
+            </li>
+          </ul>
         </div>
-        {/* <div className="experience-description">
-          <span className="resume-description-text">SubBeschreibung1</span>
-          <br />
-          <span className="resume-description-text">SubBeschreibung2</span>
-          <br />
-          <span className="resume-description-text">SubBeschreibung3</span>
-          <br />
-        </div> */}
       </div>
     </div>,
     <div className="resume-screen-container programming-skills-container" key="programming-skills">

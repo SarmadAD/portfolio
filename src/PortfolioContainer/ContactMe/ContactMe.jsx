@@ -54,6 +54,10 @@ export default function ContactMe({ id }) {
         setBanner(result.data.msg);
         toast.success(result.data.msg);
         setBool(false);
+
+        setName("");
+        setEmail("");
+        setMessage("");
       }
     } catch (error) {
       console.log(error);
